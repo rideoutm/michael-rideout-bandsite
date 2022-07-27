@@ -24,8 +24,8 @@
   }
 
   &__logo {
-    letter-spacing: 1px;
-    font-weight: normal;
+    max-height: 20px;
+    max-width: 120px;
   }
 
   &__menu {
@@ -207,13 +207,12 @@
 
 .logo {
   padding: 80px 0 16px 0;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: normal;
-  letter-spacing: 1px;
+  max-height: 20px;
+  max-width: 120px;
 }
 
 .copy-right {
+  padding-top: 16px;
   font-size: 13px;
   font-weight: normal;
 }
