@@ -120,13 +120,21 @@
 
   &__subheader {
     font-size: 14px;
+    font-weight: 600;
   }
 
   &__para-one,
   &__para-two {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  &__para-one {
     padding: 16px 0;
+  }
+
+  &__para-two {
+    padding-bottom: 16px;
   }
 }
 
@@ -157,6 +165,7 @@
   &__socials-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   &__header {
@@ -174,7 +183,7 @@
     height: 30px;
   }
 
-  &__cam {
+  &__contact {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -184,7 +193,7 @@
     font-size: 14px;
     line-height: 22px;
     padding-top: 16px;
-    font-weight: demi;
+    font-weight: 600;
   }
 
   &__details,

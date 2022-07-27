@@ -22,7 +22,7 @@ a {
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("../../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -120,11 +120,17 @@ a {
 }
 .about__subheader {
   font-size: 14px;
+  font-weight: 600;
 }
 .about__para-one, .about__para-two {
   font-size: 14px;
   line-height: 18px;
+}
+.about__para-one {
   padding: 16px 0;
+}
+.about__para-two {
+  padding-bottom: 16px;
 }
 
 .photo-gallery {
@@ -152,6 +158,7 @@ a {
 .business-info__socials-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .business-info__header {
   padding-top: 24px;
@@ -166,7 +173,7 @@ a {
   width: 30px;
   height: 30px;
 }
-.business-info__cam {
+.business-info__contact {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -175,7 +182,7 @@ a {
   font-size: 14px;
   line-height: 22px;
   padding-top: 16px;
-  font-weight: demi;
+  font-weight: 600;
 }
 .business-info__details, .business-info__email {
   padding-top: 16px;
