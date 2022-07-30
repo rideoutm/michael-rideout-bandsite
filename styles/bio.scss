@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    list-style-type: none;
+    // list-style-type: none;
     background: $BandSite-Black;
     width: 100%;
     font-weight: 200;
@@ -22,8 +22,8 @@
   }
 
   &__logo {
-    max-height: 20px;
-    max-width: 120px;
+    // height: 20px;
+    width: 120px;
   }
 
   &__menu {
@@ -34,16 +34,30 @@
     color: $Mercury;
     width: 50%;
     text-align: center;
-    padding: 16px 0;
+    padding: 16px;
+    // margin: 16px 16px 0 16px;
+
+    &:hover {
+      border-bottom: 4px solid $white;
+      color: $white;
+    }
   }
 
   &__link--active {
-    color: $white;
     font-weight: bold;
     width: 50%;
     text-align: center;
     padding: 16px 0;
     border-bottom: 4px solid $white;
+  }
+
+  &__link-text {
+    color: $Mercury;
+
+    &--active {
+      color: $white;
+      font-weight: bold;
+    }
   }
 
   @include tablet {
@@ -55,16 +69,42 @@
       list-style-type: none;
     }
     &__title-container {
-      text-align: left;
-      padding: 36px;
+      padding: 24px 36px;
       width: initial;
     }
 
+    &__logo {
+      width: 120px;
+    }
+
     &__link {
-      padding: 36px;
+      // margin: 36px 36px 0 36px;
+      padding: 24px;
     }
 
     &__link--active {
+      box-sizing: content-box;
+      padding: 24px;
+    }
+
+    &__link,
+    &__link--active {
+      font-size: 16px;
+    }
+  }
+
+  @include desktop {
+    &__title-container {
+      padding: 36px 36px 36px 140px;
+    }
+
+    &__link--active {
+      text-align: center;
+    }
+
+    &__link,
+    &__link--active {
+      font-size: 16px;
       padding: 36px;
     }
   }
@@ -73,11 +113,9 @@
 .hero {
   display: flex;
   align-items: center;
-  background: url("../assets/Images/hero-bio.jpg") center center/cover;
+  background: url("../assets/Images/hero-bio.jpg") center center/ cover;
   width: 100%;
   height: 225px;
-  // z-index: 0;
-  // position: relative;
 
   &__overlay {
     display: flex;
@@ -104,7 +142,7 @@
     align-items: center;
     background: url("../assets/Images/hero-bio.jpg") center center/cover;
     width: 100%;
-    height: 400px;
+    height: 700px;
     // z-index: 0;
     // position: relative;
 
@@ -122,9 +160,16 @@
 
     &__text {
       color: $white;
-      font-size: 3.75rem;
+      font-size: 8vw;
       font-weight: bold;
       padding-left: 36px;
+    }
+  }
+
+  @include desktop {
+    &__text {
+      padding-left: 140px;
+      font-size: 4.25vw;
     }
   }
 }
@@ -144,7 +189,7 @@
   }
 
   &__quote {
-    padding: 16px 0;
+    padding: 14px 0;
     font-weight: 600;
     color: $BandSite-Black;
     line-height: 22px;
@@ -152,7 +197,8 @@
 
   &__quote-attrib {
     font-weight: 600;
-    padding-bottom: 16px;
+    font-size: 14px;
+    padding-bottom: 32px;
     color: $BandSite-Black;
   }
   &__subheader {
@@ -176,18 +222,27 @@
 
   @include tablet {
     // padding: 0 36px;
-
-    &__container {
-      padding: 0 36px 0 36px;
-    }
-
     &__header {
       padding: 48px 36px 36px 36px;
-      font-size: 36px;
+      font-size: 4.68vw;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+      margin: 0 auto;
+      // padding: 0 72px 0 72px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 500px;
     }
 
     &__quote {
-      padding: 36px 0;
+      padding: 36px 0px 36px 0px;
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
@@ -197,7 +252,7 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
-      padding-bottom: 36px;
+      // padding-bottom: 36px;
     }
 
     &__subheader {
@@ -211,17 +266,52 @@
       flex-direction: row;
     }
 
+    &__para-one,
+    &__para-two {
+      line-height: 18px;
+    }
+
     &__para-one {
-      padding-right: 16px;
+      padding: 0 16px 16px 0;
     }
     &__para-two {
-      padding-top: 16px;
-      padding-left: 16px;
+      padding: 0 0 16px 16px;
     }
+  }
+
+  @include desktop {
+    &__header {
+      padding: 48px 36px 36px 140px;
+      font-size: 3vw;
+    }
+
+    &__container {
+      width: 70%;
+    }
+
+    &__quote {
+      padding-bottom: 16px;
+    }
+
+    &__quote-attrib {
+      padding-bottom: 0;
+    }
+    &__para-one,
+    &__para-two {
+      line-height: 22px;
+      padding-bottom: 36px;
+    }
+
+    // &__container {
+    //   // padding: 0 170px;
+    // }
   }
 }
 
 .photo-gallery {
+  // display: flex;
+  // justify-content: center;
+
   width: 100%;
   background: $Alabaster;
 
@@ -234,13 +324,20 @@
     padding: 0 16px 12px 16px;
     width: 100%;
     height: 100%;
+    filter: grayscale(100%);
+    transition: 0.25s;
+
+    &:hover {
+      filter: none;
+      transition: 0.25s;
+    }
   }
 
   @include tablet {
-    padding: 36px 36px 36px 16px;
+    padding: 36px 0px 36px 16px;
 
     &__header {
-      font-size: 36px;
+      font-size: 4.68vw;
     }
     &__container {
       display: flex;
@@ -248,9 +345,25 @@
     }
 
     &__picture {
-      padding: 16px 0 16px 16pxa;
+      padding: 16px 0 16px 16px;
       width: 32%;
     }
+  }
+
+  @include desktop {
+    padding: 36px 90px 36px 140px;
+
+    &__header {
+      padding: 24px 16px 16px 0;
+      font-size: 3vw;
+    }
+
+    &__picture {
+      padding: 16px 16px 0px 0px;
+    }
+
+    // &__header {
+    // }
   }
 }
 
@@ -287,6 +400,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // padding-top: 16px;
   }
 
   &__name {
@@ -304,9 +418,30 @@
     font-weight: normal;
   }
 
+  &__email:hover {
+    transform: scale(1.1, 1.1);
+  }
+  &__email-link {
+    color: $white;
+
+    // &:hover {
+    //   transform: scale(1.5, 1.5);
+    // }
+  }
+
   @include tablet {
     position: relative;
     padding-left: 36px;
+
+    &__header {
+      font-size: 36px;
+    }
+
+    &__link {
+      margin-bottom: -35px;
+      width: 30px;
+      height: 25px;
+    }
 
     &__socials-container {
       flex-direction: row;
@@ -314,41 +449,70 @@
     }
 
     &__socials {
-      padding-left: 85px;
+      padding-left: 50px;
     }
 
     &__contact {
       flex-direction: row;
       justify-content: flex-start;
       width: 100%;
+      padding-top: 16px;
     }
 
     &__pearl {
-      padding: 0 36px;
+      padding: 0 70px;
+    }
+  }
+
+  @include desktop {
+    padding: 16px 0px 16px 0;
+
+    &__header {
+      padding-left: 140px;
+    }
+
+    &__socials {
+      padding-left: 50px;
+    }
+
+    &__contact {
+      padding-left: 140px;
     }
   }
 }
 
 .logo {
-  padding: 80px 0 16px 0;
+  padding: 60px 0 16px 0;
   max-height: 20px;
   max-width: 120px;
 
   @include tablet {
     position: absolute;
     top: 45px;
-    right: 50px;
+    right: 3.25%;
+    padding: 0;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 45px;
+    right: 10.5%;
     padding: 0;
   }
 }
 
 .copy-right {
   padding-top: 16px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: normal;
 
   @include tablet {
     padding-top: 32px;
+    font-size: 14px;
+  }
+
+  @include desktop {
+    padding: 46px 0 16px 140px;
   }
 }
 
