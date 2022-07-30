@@ -39,10 +39,10 @@ a {
   justify-content: center;
   background: #323232;
   width: 100%;
-  font-weight: 200;
+  font-weight: normal;
 }
 .header__title-container {
-  padding-top: 16px;
+  padding-top: 1rem;
   text-align: center;
   width: 100%;
 }
@@ -56,7 +56,7 @@ a {
   color: #e1e1e1;
   width: 50%;
   text-align: center;
-  padding: 16px;
+  padding: 1rem;
 }
 .header__link:hover {
   border-bottom: 4px solid #fff;
@@ -66,7 +66,7 @@ a {
   font-weight: bold;
   width: 50%;
   text-align: center;
-  padding: 16px 0;
+  padding: 1rem 0;
   border-bottom: 4px solid #fff;
 }
 .header__link-text {
@@ -85,33 +85,33 @@ a {
     list-style-type: none;
   }
   .header__title-container {
-    padding: 24px 36px;
+    padding: 2rem 2.25rem;
     width: initial;
   }
   .header__logo {
     width: 120px;
   }
   .header__link {
-    padding: 24px;
+    padding: 2rem;
   }
   .header__link--active {
     box-sizing: content-box;
-    padding: 24px;
+    padding: 2rem;
   }
   .header__link, .header__link--active {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 @media (min-width: 1280px) {
   .header__title-container {
-    padding: 36px 36px 36px 140px;
+    padding: 2.25rem 2.25rem 2.25rem 8.75rem;
   }
   .header__link--active {
     text-align: center;
   }
   .header__link, .header__link--active {
-    font-size: 16px;
-    padding: 36px;
+    font-size: 1rem;
+    padding: 2.25rem;
   }
 }
 
@@ -135,7 +135,7 @@ a {
   font-size: 1.5rem;
   font-weight: bold;
   z-index: 2;
-  padding-left: 16px;
+  padding-left: 1rem;
 }
 @media (min-width: 768px) {
   .hero {
@@ -157,7 +157,7 @@ a {
     color: #fff;
     font-size: 8vw;
     font-weight: bold;
-    padding-left: 36px;
+    padding-left: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -168,44 +168,44 @@ a {
 }
 
 .about__container {
-  padding: 0 16px 0 16px;
+  padding: 0 1rem 0 1rem;
 }
 .about__image {
   width: 100%;
 }
 .about__header {
   color: #323232;
-  padding: 24px 0px 16px 16px;
+  padding: 1.5rem 0px 1rem 1rem;
 }
 .about__quote {
-  padding: 14px 0;
+  padding: 0.875rem 0;
   font-weight: 600;
   color: #323232;
   line-height: 22px;
 }
 .about__quote-attrib {
   font-weight: 600;
-  font-size: 14px;
-  padding-bottom: 32px;
+  font-size: 0.875rem;
+  padding-bottom: 2rem;
   color: #323232;
 }
 .about__subheader {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .about__para-one, .about__para-two {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 18px;
 }
 .about__para-one {
-  padding: 16px 0;
+  padding: 1rem 0;
 }
 .about__para-two {
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .about__header {
-    padding: 48px 36px 36px 36px;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
     font-size: 4.68vw;
   }
   .about__container {
@@ -220,20 +220,20 @@ a {
     height: 500px;
   }
   .about__quote {
-    padding: 36px 0px 36px 0px;
+    padding: 2.25rem 0;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 32px;
   }
   .about__quote-attrib {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 32px;
   }
   .about__subheader {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    padding: 48px 0 36px 0;
+    padding: 3rem 0 2.25rem 0;
   }
   .about__para-container {
     display: flex;
@@ -243,29 +243,29 @@ a {
     line-height: 18px;
   }
   .about__para-one {
-    padding: 0 16px 16px 0;
+    padding: 0 1rem 1rem 0;
   }
   .about__para-two {
-    padding: 0 0 16px 16px;
+    padding: 0 0 1rem 1rem;
   }
 }
 @media (min-width: 1280px) {
   .about__header {
-    padding: 48px 36px 36px 140px;
+    padding: 3rem 2.25rem 2.25rem 9.75rem;
     font-size: 3vw;
   }
   .about__container {
     width: 70%;
   }
   .about__quote {
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
   .about__quote-attrib {
     padding-bottom: 0;
   }
   .about__para-one, .about__para-two {
     line-height: 22px;
-    padding-bottom: 36px;
+    padding-bottom: 2.25rem;
   }
 }
 
@@ -275,10 +275,10 @@ a {
 }
 .photo-gallery__header {
   color: #323232;
-  padding: 24px 16px 16px 16px;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 .photo-gallery__picture {
-  padding: 0 16px 12px 16px;
+  padding: 0 1rem 0.75rem 1rem;
   width: 100%;
   height: 100%;
   filter: grayscale(100%);
@@ -290,7 +290,7 @@ a {
 }
 @media (min-width: 768px) {
   .photo-gallery {
-    padding: 36px 0px 36px 16px;
+    padding: 2.25rem 0px 2.25rem 1rem;
   }
   .photo-gallery__header {
     font-size: 4.68vw;
@@ -300,20 +300,20 @@ a {
     flex-wrap: wrap;
   }
   .photo-gallery__picture {
-    padding: 16px 0 16px 16px;
+    padding: 1rem 0 1rem 1rem;
     width: 32%;
   }
 }
 @media (min-width: 1280px) {
   .photo-gallery {
-    padding: 36px 90px 36px 140px;
+    padding: 2.25rem 5.62rem 2.25rem 8.75rem;
   }
   .photo-gallery__header {
-    padding: 24px 16px 16px 0;
+    padding: 2rem 1rem 1rem 0;
     font-size: 3vw;
   }
   .photo-gallery__picture {
-    padding: 16px 16px 0px 0px;
+    padding: 1rem 1rem 0px 0px;
   }
 }
 
@@ -322,7 +322,7 @@ a {
   background: #323232;
   color: #fff;
   height: 100%;
-  padding: 16px 0px 16px 16px;
+  padding: 1rem 0px 1rem 1rem;
   margin: 0;
 }
 .business-info__socials-container {
@@ -331,15 +331,15 @@ a {
   justify-content: space-between;
 }
 .business-info__header {
-  padding-top: 24px;
-  font-size: 24px;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
   line-height: 32px;
   font-weight: bold;
 }
 .business-info__link {
   box-sizing: content-box;
-  padding-top: 16px;
-  margin-right: 20px;
+  padding-top: 1rem;
+  margin-right: 1.25rem;
   width: 30px;
   height: 30px;
 }
@@ -349,15 +349,15 @@ a {
   justify-content: space-between;
 }
 .business-info__name {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 22px;
-  padding-top: 16px;
+  padding-top: 1rem;
   font-weight: 600;
 }
 .business-info__details, .business-info__email {
-  padding-top: 16px;
+  padding-top: 1rem;
   line-height: 18px;
-  font-size: 13px;
+  font-size: 0.812rem;
   font-weight: normal;
 }
 .business-info__email:hover {
@@ -369,13 +369,12 @@ a {
 @media (min-width: 768px) {
   .business-info {
     position: relative;
-    padding-left: 36px;
+    padding-left: 2.25rem;
   }
   .business-info__header {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
   .business-info__link {
-    margin-bottom: -35px;
     width: 30px;
     height: 25px;
   }
@@ -384,13 +383,13 @@ a {
     justify-content: flex-start;
   }
   .business-info__socials {
-    padding-left: 50px;
+    padding-left: 3.12rem;
   }
   .business-info__contact {
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
-    padding-top: 16px;
+    padding-top: 1rem;
   }
   .business-info__pearl {
     padding: 0 70px;
@@ -398,21 +397,21 @@ a {
 }
 @media (min-width: 1280px) {
   .business-info {
-    padding: 16px 0px 16px 0;
+    padding: 1rem 0px 1rem 0;
   }
   .business-info__header {
-    padding-left: 140px;
+    padding-left: 8.75rem;
   }
   .business-info__socials {
-    padding-left: 50px;
+    padding-left: 3.12rem;
   }
   .business-info__contact {
-    padding-left: 140px;
+    padding-left: 8.75rem;
   }
 }
 
 .logo {
-  padding: 60px 0 16px 0;
+  padding: 3.75rem 0 3.75rem 0;
   max-height: 20px;
   max-width: 120px;
 }
@@ -434,18 +433,18 @@ a {
 }
 
 .copy-right {
-  padding-top: 16px;
-  font-size: 11px;
+  padding-top: 1rem;
+  font-size: 0.6875rem;
   font-weight: normal;
 }
 @media (min-width: 768px) {
   .copy-right {
-    padding-top: 32px;
-    font-size: 14px;
+    padding-top: 2rem;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 1280px) {
   .copy-right {
-    padding: 46px 0 16px 140px;
+    padding: 2.875rem 0 1rem 8.75rem;
   }
 }/*# sourceMappingURL=bio.css.map */
