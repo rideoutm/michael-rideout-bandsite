@@ -237,11 +237,12 @@
     font-weight: normal;
   }
 
-  &__email:hover {
-    transform: scale(1.1, 1.1);
-  }
   &__email-link {
     color: $white;
+
+    &:hover {
+      font-weight: 600;
+    }
   }
 
   @include tablet {

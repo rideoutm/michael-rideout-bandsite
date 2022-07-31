@@ -360,11 +360,11 @@ a {
   font-size: 0.812rem;
   font-weight: normal;
 }
-.business-info__email:hover {
-  transform: scale(1.1, 1.1);
-}
 .business-info__email-link {
   color: #fff;
+}
+.business-info__email-link:hover {
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .business-info {
@@ -377,6 +377,9 @@ a {
   .business-info__link {
     width: 30px;
     height: 25px;
+  }
+  .business-info__email:hover {
+    transform: scale(1.1, 1.1);
   }
   .business-info__socials-container {
     flex-direction: row;
