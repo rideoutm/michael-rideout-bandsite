@@ -377,6 +377,8 @@ a {
   .business-info__link {
     width: 30px;
     height: 25px;
+    margin-bottom: -35px;
+    margin-left: -3px;
   }
   .business-info__email-link:hover, .business-info__email:hover {
     font-weight: normal;
@@ -384,7 +386,7 @@ a {
   .business-info__email:hover {
     transform: scale(1.1, 1.1);
   }
-  .business-info__email-link .business-info__socials-container {
+  .business-info__email-link, .business-info__socials-container {
     flex-direction: row;
     justify-content: flex-start;
   }
