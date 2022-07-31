@@ -152,11 +152,16 @@
     height: 25px;
   }
 
+  &__email-link:hover,
   &__email:hover {
-    transform: scale(1.1, 1.1);
+    font-weight: normal;
   }
 
-  &__socials-container {
+  &__email:hover {
+    transform: scale((1.1, 1.1));
+  }
+
+  &__email-link &__socials-container {
     flex-direction: row;
     justify-content: flex-start;
   }
