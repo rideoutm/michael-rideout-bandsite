@@ -361,15 +361,17 @@ a {
   font-weight: 600;
 }
 .comments__name-field::placeholder, .comments__comment-field::placeholder, .comments__comment-field::-webkit-input-placeholder {
-  display: block;
+  font-family: "AvenirNext LT Pro";
   color: #323232;
-  vertical-align: top;
 }
 .comments__name-field:focus, .comments__comment-field:focus {
   border: 1px solid #323232;
 }
 .comments__comment-field {
+  font-family: "AvenirNext LT Pro";
   height: 100px;
+  width: 100%;
+  resize: none;
 }
 .comments__submit-btn {
   margin: 16px 0;
@@ -382,9 +384,6 @@ a {
   font-size: 24px;
 }
 
-.comments-archieve {
-  width: 100%;
-}
 .comments-archieve__hr {
   width: 100%;
   border: 1px solid #e1e1e1;
@@ -392,7 +391,6 @@ a {
 }
 .comments-archieve__comment {
   display: flex;
-  flex-direction: column;
   padding: 0;
 }
 .comments-archieve__icon {
@@ -400,9 +398,25 @@ a {
   height: 36px;
   border-radius: 50%;
 }
+.comments-archieve__text {
+  max-width: 80vw;
+  word-wrap: break-word;
+}
+.comments-archieve__text, .comments-archieve__name-date {
+  padding-left: 16px;
+  padding-bottom: 16px;
+}
+.comments-archieve__com-container {
+  width: 100%;
+}
 .comments-archieve__name-date {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 16px;
+  font-weight: 600;
+}
+.comments-archieve__span-right {
+  text-align: right;
 }
 
 .business-info {

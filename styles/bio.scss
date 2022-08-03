@@ -247,9 +247,8 @@
   &__name-field::placeholder,
   &__comment-field::placeholder,
   &__comment-field::-webkit-input-placeholder {
-    display: block;
+    font-family: "AvenirNext LT Pro";
     color: $BandSite-Black;
-    vertical-align: top;
   }
 
   &__name-field:focus,
@@ -260,7 +259,10 @@
   }
 
   &__comment-field {
+    font-family: "AvenirNext LT Pro";
     height: 100px;
+    width: 100%;
+    resize: none;
   }
 
   &__submit-btn {
@@ -278,7 +280,9 @@
 // Comments Archieve
 
 .comments-archieve {
-  width: 100%;
+  // width: 100%;
+  // display: flex;
+
   &__hr {
     width: 100%;
     border: 1px solid $Mercury;
@@ -287,7 +291,7 @@
 
   &__comment {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     padding: 0;
   }
 
@@ -299,9 +303,30 @@
     border-radius: 50%;
   }
 
+  &__text {
+    max-width: 80vw;
+    word-wrap: break-word;
+  }
+
+  &__text,
+  &__name-date {
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+
+  &__com-container {
+    width: 100%;
+  }
+
   &__name-date {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 16px;
+    font-weight: 600;
+  }
+
+  &__span-right {
+    text-align: right;
   }
 }
 

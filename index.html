@@ -90,35 +90,36 @@
         <div class="comments__main-container">
           <img class="comments__comment-icon" src="./assets/Images/Mohan-muruge.jpg" alt="user image">
 
-            <form class="comments__form-container" action="">              
+            <form class="comments__form-container" action="URL" method="POST">              
                 <label class="comments__form-label"   for="name">NAME</label>
                 <input id="name" class="comments__name-field" type="text" placeholder="Enter your name" required>
 
-              <label class="comments__form-label" for="comments">COMMENT</label>
-                <input class="comments__comment-field" id="comments" type="text-" placeholder="Add a new comment" required >                
-                <input type="submit" class="comments__submit-btn" value="COMMENT">
+              <label class="comments__form-label" for="comments">COMMENT</label>              
+                <textarea class="comments__comment-field" id="comments" type="text" placeholder="Add a new comment"></textarea> 
+              
+                      
+                <input type="submit" class="comments__submit-btn" value="COMMENT" maxlength="40">
             </form>  
         </div>
-        
+
         <section class="comments-archieve">
-          <div class="comments-archieve__comment">
-            <hr class="comments-archieve__hr"></hr>
-            
+          <div class="TESTDIV">
+            <!-- <hr class="comments-archieve__hr">
+          <div class="comments-archieve__comment">            
             <img class="comments-archieve__icon" src="./assets/Images/Mohan-muruge.jpg" alt="icon placeholder">
-            
             <div class="comments-archieve__com-container">
               <div class="comments-archieve__name-date">
                 <span>Name Holder</span>
-                <span>May 10</span>
+                <span class="comments-archieve__date-span">May 10</span>
               </div>
 
               <div class="comments-archieve__text">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, repellendus molestias! Alias impedit nulla pariatur commodi at nisi ratione fugit!
               </div>
             </div>
-
-
+          </div> -->
           </div>
+          
         </section>
 
       </section>
