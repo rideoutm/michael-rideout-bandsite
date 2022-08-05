@@ -367,6 +367,9 @@ a {
 .comments__name-field:focus, .comments__comment-field:focus {
   border: 1px solid #323232;
 }
+.comments__error {
+  border: 1px solid #d22d2d;
+}
 .comments__comment-field {
   font-family: "AvenirNext LT Pro";
   height: 100px;
@@ -382,6 +385,9 @@ a {
   border-radius: 4px;
   border: none;
   font-size: 24px;
+}
+.comments__submit-btn:hover {
+  background: #000;
 }
 
 .comments-archieve__hr {

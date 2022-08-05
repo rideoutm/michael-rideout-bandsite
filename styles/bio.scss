@@ -257,6 +257,9 @@
     // -webkit-border: 1px solid $BandSite-black;
     // -moz-border: 1px solid $BandSite-Black;
   }
+  &__error {
+    border: 1px solid #d22d2d;
+  }
 
   &__comment-field {
     font-family: "AvenirNext LT Pro";
@@ -274,6 +277,10 @@
     border-radius: 4px;
     border: none;
     font-size: 24px;
+  }
+
+  &__submit-btn:hover {
+    background: $BandSite-DarkBlack;
   }
 }
 
