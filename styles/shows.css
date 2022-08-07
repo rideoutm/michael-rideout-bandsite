@@ -438,7 +438,6 @@ a {
   position: relative;
   width: 36px;
   height: 36px;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0)), url("../assets/Images/Mohan-muruge.jpg");
   border-radius: 50%;
   border: none;
 }

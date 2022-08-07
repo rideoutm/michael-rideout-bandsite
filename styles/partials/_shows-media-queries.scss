@@ -1,6 +1,7 @@
 @use "./utilities" as *;
 @use "./global" as *;
 
+// Header Section
 @mixin shows-tablet-header {
   height: 28.75rem;
   // position: unset;
@@ -55,6 +56,7 @@
   }
 }
 
+// Shows Table Section
 @mixin shows-tablet-shows {
   &__container {
     flex-direction: column;

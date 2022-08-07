@@ -46,7 +46,6 @@ function displayShowTitle() {
   showsDatesContainer.classList.add("shows__dates-container");
 
   // classes for tablet/desktop  hidden row
-
   main.appendChild(showsContainer);
   showsContainer.appendChild(showsTitle);
   showsTitle.appendChild(h2);
@@ -54,19 +53,9 @@ function displayShowTitle() {
 
   h2.innerText = "Shows";
 
+  // Add dark background to rows on click
   let container = document.querySelector(".shows__dates-container");
-
   let selectedRow;
-
-  container.addEventListener("click", (e) => {
-    console.log(e.target);
-    let row = e.target.closest(".shows__show");
-    if (!row) return;
-
-    if (!container.contains(row)) return;
-
-    focusDark(row);
-  });
 
   function focusDark(theRow) {
     if (selectedRow) {
@@ -77,6 +66,15 @@ function displayShowTitle() {
     selectedRow.classList.add("shows__focus-dark");
     selectedRow.classList.remove("shows__show--hover");
   }
+
+  container.addEventListener("click", (e) => {
+    let row = e.target.closest(".shows__show");
+    if (!row) return;
+
+    if (!container.contains(row)) return;
+
+    focusDark(row);
+  });
 
   // Build HTML card, loop through dates array, assign array values to elements
   return function displayShowCard() {

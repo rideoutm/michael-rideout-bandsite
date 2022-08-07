@@ -24,14 +24,11 @@ let commentsArray = [
 
 // HTML elements
 const submitBtn = document.querySelector(".comments__submit-btn");
-// const testDiv = document.querySelector(".TESTDIV");
 const nameField = document.querySelector(".comments__name-field");
 const commentsField = document.querySelector(".comments__comment-field");
 const commentsAchieve = document.querySelector(".comments-archieve");
 
-// Build HTML
-
-// Modular data input
+// Modular data input for later updates
 function insertData(span1, span2, text, dataElement) {
   span1.innerText = dataElement.name;
   span2.innerText = dataElement.timestamp;
@@ -41,7 +38,7 @@ function insertData(span1, span2, text, dataElement) {
 // Build out HTML comment card & prepend to top of comment list
 let displayComment = function (array) {
   array.forEach((el) => {
-    const testDiv = document.createElement("div");
+    const outer = document.createElement("div");
     const hr = document.createElement("hr");
     const comment = document.createElement("div");
     const commentIcon = document.createElement("img");
@@ -51,7 +48,7 @@ let displayComment = function (array) {
     const span1 = document.createElement("span");
     const text = document.createElement("div");
 
-    testDiv.classList.add("TESTDIV");
+    outer.classList.add("comments-archieve__outer");
     hr.classList.add("comments-archieve__hr");
     comment.classList.add("comments-archieve__comment");
     comContainer.classList.add("comments-archieve__com-container");
@@ -62,9 +59,9 @@ let displayComment = function (array) {
 
     commentIcon.setAttribute("src", "./assets/Images/placeholder.png");
 
-    commentsAchieve.prepend(testDiv);
-    testDiv.appendChild(hr);
-    testDiv.appendChild(comment);
+    commentsAchieve.prepend(outer);
+    outer.appendChild(hr);
+    outer.appendChild(comment);
     comment.appendChild(commentIcon);
     comment.appendChild(comContainer);
     comContainer.appendChild(nameDate);
@@ -79,7 +76,6 @@ let displayComment = function (array) {
 displayComment(commentsArray);
 
 submitBtn.addEventListener("click", (e) => {
-  console.log(e);
   e.preventDefault();
 
   // Form validation, trim white space
@@ -116,66 +112,3 @@ commentsField.addEventListener("change", function () {
   if (commentsField.value.length >= 1)
     commentsField.classList.remove("comments__error");
 });
-
-// displayComment(commentsArray);
-
-// let newComment = function () {
-//     const testDiv = document.createElement("div");
-//     const hr = document.createElement("hr");
-//     const comment = document.createElement("div");
-//     const commentIcon = document.createElement("img");
-//     const comContainer = document.createElement("div");
-//     const nameDate = document.createElement("div");
-//     const span = document.createElement("span");
-//     const span1 = document.createElement("span");
-//     const text = document.createElement("div");
-
-//     testDiv.classList.add("TESTDIV");
-//     hr.classList.add("comments-archieve__hr");
-//     comment.classList.add("comments-archieve__comment");
-//     comContainer.classList.add("comments-archieve__com-container");
-//     commentIcon.classList.add("comments-archieve__icon");
-//     nameDate.classList.add("comments-archieve__name-date");
-//     span1.classList.add("comments-archieve__span-right");
-//     text.classList.add("comments-archieve__text");
-
-//     commentIcon.setAttribute("src", "./assets/Images/Mohan-muruge.jpg");
-
-//     commentsAchieve.appendChild(testDiv);
-//     testDiv.appendChild(hr);
-//     testDiv.appendChild(comment);
-//     comment.appendChild(commentIcon);
-//     comment.appendChild(comContainer);
-//     comContainer.appendChild(nameDate);
-//     nameDate.appendChild(span);
-//     nameDate.appendChild(span1);
-//     comContainer.appendChild(text);
-
-//     span.innerText = commentsArray[commentsArray.length - 1].name;
-//     span1.innerText = commentsArray[commentsArray.length - 1].timestamp;
-//     text.innerText = commentsArray[commentsArray.length - 1].comments;
-//   };
-
-//   commentsAchieve.prepend(newComment());
-
-// const html = `
-//     <div class="TESTDIV">
-//         <hr class="comments-archieve__hr">
-//         <div class="comments-archieve__comment">
-//             <img class="comments-archieve__icon" src="./assets/Images/Mohan-muruge.jpg" alt="icon placeholder">
-//             <div class="comments-archieve__com-container">
-//               <div class="comments-archieve__name-date">
-//                 <span>${commentsArray[commentsArray.length - 1].name}</span>
-//                 <span class="comments-archieve__span-right">${
-//                   commentsArray[commentsArray.length - 1].date
-//                 }</span>
-//               </div>
-
-//               <div class="comments-archieve__text">
-//                 ${commentsArray[commentsArray.length - 1].comment}
-//               </div>
-//             </div>
-//           </div>
-//     </div>`;
-
-//   commentsAchieve.insertAdjacentHTML("afterbegin", html);
