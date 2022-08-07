@@ -60,7 +60,7 @@ let displayComment = function (array) {
     span1.classList.add("comments-archieve__span-right");
     text.classList.add("comments-archieve__text");
 
-    commentIcon.setAttribute("src", "./assets/Images/Mohan-muruge.jpg");
+    commentIcon.setAttribute("src", "./assets/Images/placeholder.png");
 
     commentsAchieve.prepend(testDiv);
     testDiv.appendChild(hr);
@@ -83,15 +83,15 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   // Form validation, trim white space
-  if (nameField.value === "" || commentsField.value === "") {
-    nameField.classList.add("comments__error");
+  if (nameField.value === "") nameField.classList.add("comments__error");
+  if (commentsField.value === "")
     commentsField.classList.add("comments__error");
-  } else if (nameField.value.length >= 1 && commentsField.value.length >= 1) {
+  else if (nameField.value.length >= 1 && commentsField.value.length >= 1) {
     const today = new Date();
 
     commentsArray.unshift({
       name: nameField.value.trim(),
-      timestamp: today.toLocaleDateString("en-GB", {}),
+      timestamp: today.toLocaleDateString("en-US"),
       comments: commentsField.value.trim(),
     });
 

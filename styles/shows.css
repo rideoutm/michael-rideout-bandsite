@@ -389,6 +389,41 @@ a {
 .comments__submit-btn:hover {
   background: #000;
 }
+@media (min-width: 768px) {
+  .comments__header {
+    padding: 2rem 0 1rem 1rem;
+    font-size: 4.25vw;
+  }
+  .comments__main-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .comments__form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .comments__submit-btn {
+    font-size: 2vw;
+    width: 30%;
+    align-self: flex-end;
+    margin: 2rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__header {
+    padding: 2rem 0 1rem 7.75rem;
+    font-size: 2.75vw;
+  }
+  .comments__main-container {
+    width: 39%;
+    margin: 0 auto;
+  }
+  .comments__submit-btn {
+    font-size: 1.25vw;
+    text-align: center;
+    width: 43%;
+  }
+}
 
 .comments-archieve__hr {
   width: 100%;
@@ -400,9 +435,12 @@ a {
   padding: 0;
 }
 .comments-archieve__icon {
+  position: relative;
   width: 36px;
   height: 36px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0)), url("../assets/Images/Mohan-muruge.jpg");
   border-radius: 50%;
+  border: none;
 }
 .comments-archieve__text {
   max-width: 80vw;
@@ -422,7 +460,20 @@ a {
   font-weight: 600;
 }
 .comments-archieve__span-right {
+  color: #afafaf;
   text-align: right;
+}
+@media (min-width: 768px) {
+  .comments-archieve {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .comments-archieve {
+    width: 39%;
+    margin: 0 auto;
+  }
 }
 
 .business-info {
@@ -568,6 +619,7 @@ a {
 .hero {
   background: url("../assets/Images/hero-shows.jpg") center center/cover;
   height: 325px;
+  position: relative;
 }
 .hero__overlay {
   display: flex;
@@ -588,11 +640,59 @@ a {
 }
 .hero__main-title {
   font-size: 7.25vw;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 32px;
+  width: 80%;
 }
 .hero__iframe {
+  box-sizing: border-box;
+  position: absolute;
   padding-top: 1.25rem;
+  width: 93%;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 28.75rem;
+  }
+  .hero__sub-title {
+    padding-left: 1rem;
+    font-size: 3vw;
+  }
+  .hero__main-title {
+    padding-left: 1rem;
+    line-height: 70px;
+    font-size: 6.5vw;
+    width: 70%;
+  }
+  .hero__iframe {
+    padding-left: 1rem;
+    margin-top: 20px;
+    width: 46%;
+    height: 150px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__sub-title {
+    padding-top: 6.25rem;
+  }
+  .hero__sub-title, .hero__main-title {
+    padding-left: 7.5rem;
+  }
+  .hero__sub-title {
+    font-size: 2vw;
+  }
+  .hero__main-title {
+    font-size: 5vw;
+    line-height: 65px;
+    width: 55%;
+  }
+  .hero__iframe {
+    position: absolute;
+    top: 27%;
+    right: 145px;
+    padding-left: 7.5rem;
+    width: 40%;
+  }
 }
 
 .shows {
@@ -601,17 +701,28 @@ a {
 .shows__title {
   font-size: 7vw;
   padding-bottom: 1.75rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #323232;
 }
 .shows__container {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.shows__title, .shows__show {
   padding: 0 1rem;
 }
 .shows__show {
+  box-sizing: border-box;
   color: #fff;
+  border-bottom: 2px solid #e1e1e1;
+}
+.shows__show--hover:hover {
+  background: #fafafa;
+}
+.shows__show-date {
+  padding-top: 1rem;
 }
 .shows__sub-header-date, .shows__sub-header-venue, .shows__sub-header-location {
   color: #afafaf;
@@ -645,9 +756,108 @@ a {
 .shows__ticket-btn:hover {
   background: #000;
 }
-.shows__divider {
-  width: 120%;
-  border-bottom: 2px solid #e1e1e1;
-  margin-bottom: 1rem;
-  margin-left: -1rem;
+.shows__focus-dark {
+  background: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .shows__container {
+    flex-direction: column;
+  }
+  .shows__show {
+    box-sizing: border-box;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0 1rem;
+  }
+  .shows__show--row-width {
+    height: 150px;
+  }
+  .shows__title {
+    font-size: 3vw;
+    padding: 2rem 2rem;
+  }
+  .shows__dates-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .shows__show-date {
+    width: 30%;
+    padding-top: 0;
+  }
+  .shows__show-venue {
+    padding-left: 2rem;
+  }
+  .shows__show-location, .shows__show-venue {
+    width: 25%;
+  }
+  .shows__sub-header-date, .shows__sub-header-venue, .shows__sub-header-location {
+    font-size: 2vw;
+    padding-bottom: 40px;
+  }
+  .shows__spec-date, .shows__show-info-venue, .shows__show-info-city {
+    font-size: 2vw;
+  }
+  .shows__spec-date {
+    font-size: 2.5vw;
+  }
+  .shows__ticket-btn {
+    box-sizing: border-box;
+    font-size: 2vw;
+    letter-spacing: 0.5px;
+    height: 50%;
+    padding: 0 1rem;
+    margin-top: 20px;
+  }
+  .shows__ticket-btn--first {
+    height: 34%;
+    margin-top: 65px;
+  }
+  .shows__hidden {
+    display: none;
+  }
+  .shows__margin {
+    margin-top: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__container {
+    display: flex;
+    flex-direction: row;
+  }
+  .shows__margin {
+    margin-top: 0.31rem;
+  }
+  .shows__title {
+    font-size: 1.5vw;
+    width: 13%;
+    text-align: center;
+    margin-left: 4rem;
+    margin-right: 3rem;
+  }
+  .shows__dates-container {
+    margin-top: 4.3rem;
+    width: 70%;
+  }
+  .shows__sub-header-date, .shows__sub-header-venue, .shows__sub-header-location {
+    font-size: 1vw;
+    padding-bottom: 2rem;
+  }
+  .shows__spec-date {
+    width: 90%;
+  }
+  .shows__spec-date, .shows__show-info-venue, .shows__show-info-city {
+    font-size: 1vw;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .shows__ticket-btn {
+    font-size: 1.25vw;
+    width: 200px;
+  }
+}
+
+.business-info--margin-top {
+  margin-top: 3rem;
 }/*# sourceMappingURL=shows.css.map */
