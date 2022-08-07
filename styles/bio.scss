@@ -284,44 +284,31 @@
   }
 
   @include tablet {
-    &__header {
-      padding: 2rem 0 1rem 1rem;
-      font-size: 4.25vw;
-    }
+    @include tablet-comments();
+    // &__header {
+    //   padding: 2rem 0 1rem 1rem;
+    //   font-size: 4.25vw;
+    // }
 
-    &__main-container {
-      width: 80%;
-      margin: 0 auto;
-    }
+    // &__main-container {
+    //   width: 80%;
+    //   margin: 0 auto;
+    // }
 
-    &__form-container {
-      display: flex;
-      flex-direction: column;
-    }
-    &__submit-btn {
-      font-size: 2vw;
-      width: 30%;
-      align-self: flex-end;
-      margin: 2rem 0;
-    }
+    // &__form-container {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+    // &__submit-btn {
+    //   font-size: 2vw;
+    //   width: 30%;
+    //   align-self: flex-end;
+    //   margin: 2rem 0;
+    // }
   }
 
   @include desktop {
-    &__header {
-      padding: 2rem 0 1rem 7.75rem;
-      font-size: 2.75vw;
-    }
-
-    &__main-container {
-      width: 39%;
-      margin: 0 auto;
-    }
-
-    &__submit-btn {
-      font-size: 1.25vw;
-      text-align: center;
-      width: 43%;
-    }
+    @include desktop-comments();
   }
 }
 
@@ -381,13 +368,11 @@
   }
 
   @include tablet {
-    width: 80%;
-    margin: 0 auto;
+    @include tablet-comments-archieve();
   }
 
   @include desktop {
-    width: 39%;
-    margin: 0 auto;
+    @include desktop-comments-archieve();
   }
 }
 
@@ -487,9 +472,3 @@
     @include desktop-copy-right();
   }
 }
-
-// sect header txt size 24px, LH 32px, wgt Bold 700
-
-// sub header txt size 14px, LH: 22px, wgt Demi 600
-
-// body/footer txt size 13px, LH 18px, wgt reg 400

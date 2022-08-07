@@ -54,6 +54,30 @@ function displayShowTitle() {
 
   h2.innerText = "Shows";
 
+  let container = document.querySelector(".shows__dates-container");
+
+  let selectedRow;
+
+  container.addEventListener("click", (e) => {
+    console.log(e.target);
+    let row = e.target.closest(".shows__show");
+    if (!row) return;
+
+    if (!container.contains(row)) return;
+
+    focusDark(row);
+  });
+
+  function focusDark(theRow) {
+    if (selectedRow) {
+      selectedRow.classList.remove("shows__focus-dark");
+      selectedRow.classList.add("shows__show--hover");
+    }
+    selectedRow = theRow;
+    selectedRow.classList.add("shows__focus-dark");
+    selectedRow.classList.remove("shows__show--hover");
+  }
+
   // Build HTML card, loop through dates array, assign array values to elements
   return function displayShowCard() {
     datesArray.forEach((el, i) => {
@@ -133,33 +157,6 @@ function displayShowTitle() {
       showInfoCity.innerText = el.location;
       showsTicketBtn.innerText = "BUY TICKETS";
     });
-
-    let container = document.querySelector(".shows__dates-container");
-    let removeHover = document.querySelector(".shows__show--hover");
-
-    let selectedRow;
-
-    container.addEventListener("click", (e) => {
-      console.log(e.target);
-      let row = e.target.closest(".shows__show");
-      if (!row) return;
-
-      if (!container.contains(row)) return;
-
-      focusDark(row);
-    });
-
-    container.addEventListener("click");
-
-    function focusDark(theRow) {
-      if (selectedRow) {
-        selectedRow.classList.remove("shows__focus-dark");
-        selectedRow.classList.add("shows__show--hover");
-      }
-      selectedRow = theRow;
-      selectedRow.classList.add("shows__focus-dark");
-      selectedRow.classList.remove("shows__show--hover");
-    }
   };
 }
 

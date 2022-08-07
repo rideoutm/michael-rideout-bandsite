@@ -91,7 +91,11 @@ submitBtn.addEventListener("click", (e) => {
 
     commentsArray.unshift({
       name: nameField.value.trim(),
-      timestamp: today.toLocaleDateString("en-US"),
+      timestamp: today.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }),
       comments: commentsField.value.trim(),
     });
 

@@ -4,7 +4,7 @@
 @use "./partials/utilities" as *;
 @use "./partials/mixins" as *;
 @use "./partials/media-queries" as *;
-@use "./shows-media-queryies" as *;
+@use "./partials/shows-media-queries" as *;
 
 .hero {
   background: url("../assets/Images/hero-shows.jpg") center center/cover;
@@ -47,8 +47,13 @@
     // height: 100px;
   }
 
-  @include shows-tablet-header();
-  @include shows-desktop-header();
+  @include tablet {
+    @include shows-tablet-header();
+  }
+
+  @include desktop {
+    @include shows-desktop-header();
+  }
 }
 
 .shows {
@@ -134,8 +139,13 @@
     background: $Mercury;
   }
 
-  @include shows-tablet-shows();
-  @include shows-deskop-shows();
+  @include tablet {
+    @include shows-tablet-shows();
+  }
+
+  @include desktop {
+    @include shows-deskop-shows();
+  }
 }
 
 .business-info {
