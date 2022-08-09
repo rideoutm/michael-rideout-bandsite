@@ -1,26 +1,27 @@
 "use strict";
 
-// Initial Comments Array
-let commentsArray = [
-  {
-    name: "Miles Acosta",
-    timestamp: "12/20/2020",
-    comments:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: "Emilie Beach",
-    timestamp: "01/09/2021",
-    comments:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Connor Walton",
-    timestamp: "02/17/2021",
-    comments:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+const apiCall =
+  "https://project-1-api.herokuapp.com/comments?api_key=8d9114d8-af44-486e-87c5-e7843ad6dd15";
+
+let commentsArray = [];
+
+axios
+  .get(apiCall)
+  .then((response) => {
+    // if response is not "ok", throw an error
+    if (!response.status === 200)
+      throw new Error(response.status, console.log("error retrieving data"));
+
+    // set the empty array to the API array
+    commentsArray = response.data;
+    commentsArray.sort((a, b) => b - a);
+
+    // call displayComments func w/ commentsArray passed in
+    displayComment(commentsArray.reverse());
+  })
+  .catch((err) =>
+    console.log(err, "Well this is embarrassing... Something went wrong")
+  );
 
 // HTML elements
 const submitBtn = document.querySelector(".comments__submit-btn");
@@ -28,15 +29,9 @@ const nameField = document.querySelector(".comments__name-field");
 const commentsField = document.querySelector(".comments__comment-field");
 const commentsAchieve = document.querySelector(".comments-archieve");
 
-// Modular data input for later updates
-function insertData(span1, span2, text, dataElement) {
-  span1.innerText = dataElement.name;
-  span2.innerText = dataElement.timestamp;
-  text.innerText = dataElement.comments;
-}
-
 // Build out HTML comment card & prepend to top of comment list
 let displayComment = function (array) {
+  // For each element in commentsArray, do...
   array.forEach((el) => {
     const outer = document.createElement("div");
     const hr = document.createElement("hr");
@@ -69,10 +64,21 @@ let displayComment = function (array) {
     nameDate.appendChild(span1);
     comContainer.appendChild(text);
 
-    insertData(span, span1, text, el);
+    // create a new date object, pass in the timestamp from each index in the array.
+    let date = new Date(el.timestamp);
+
+    // assign each HTML form element respective array values, convert milisecond timestamp to readable date.
+    span.innerText = el.name;
+    span1.innerHTML = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    text.innerText = el.comment;
   });
 };
 
+// run it
 displayComment(commentsArray);
 
 submitBtn.addEventListener("click", (e) => {
@@ -92,7 +98,7 @@ submitBtn.addEventListener("click", (e) => {
         month: "2-digit",
         day: "2-digit",
       }),
-      comments: commentsField.value.trim(),
+      comment: commentsField.value.trim(),
     });
 
     displayComment([commentsArray[0]]);
