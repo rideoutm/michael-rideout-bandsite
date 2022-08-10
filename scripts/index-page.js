@@ -93,7 +93,7 @@ submitBtn.addEventListener("click", (e) => {
     .then((res) => {
       if (!res.status >= 200 && !res.status < 300)
         throw new Error(res.status, console.log("Could not post!"));
-      if (nameField.value.length < 1 || commentsField.value.length < 1) return;
+      if (nameField.value.length < 1 || commentsField.value.length < 1);
       else {
         console.log(res);
         commentsArray.unshift(res.data);
