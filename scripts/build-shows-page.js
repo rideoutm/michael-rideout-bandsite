@@ -1,5 +1,8 @@
 "use strict";
 
+const apiCall =
+  "https://project-1-api.herokuapp.com/showdates?api_key=8d9114d8-af44-486e-87c5-e7843ad6dd15";
+
 const datesArray = [
   {
     date: "Mon Sept 06 2021",
@@ -78,82 +81,89 @@ function displayShowTitle() {
 
   // Build HTML card, loop through dates array, assign array values to elements
   return function displayShowCard() {
-    datesArray.forEach((el, i) => {
-      // Div elements
-      const showsShow = document.createElement("div");
-      const showsShowDate = document.createElement("div");
-      const showsShowVenue = document.createElement("div");
-      const showsShowLocation = document.createElement("div");
-      const showsShowsBtn = document.createElement("div");
+    axios.get(apiCall).then((res) => {
+      console.log(res);
 
-      const showsDivider = document.createElement("div");
+      res.data.forEach((el, i) => {
+        // Div elements
+        const showsShow = document.createElement("div");
+        const showsShowDate = document.createElement("div");
+        const showsShowVenue = document.createElement("div");
+        const showsShowLocation = document.createElement("div");
+        const showsShowsBtn = document.createElement("div");
 
-      // Paragraph Elements
-      const showInfoVenue = document.createElement("p");
-      const showInfoCity = document.createElement("p");
-      const showsSubHeaderDate = document.createElement("p");
-      const showsSubHeaderVenue = document.createElement("p");
-      const showsSubHeaderLoc = document.createElement("p");
-      const showsSpecDate = document.createElement("p");
+        const showsDivider = document.createElement("div");
 
-      // Button Element
-      const showsTicketBtn = document.createElement("button");
+        // Paragraph Elements
+        const showInfoVenue = document.createElement("p");
+        const showInfoCity = document.createElement("p");
+        const showsSubHeaderDate = document.createElement("p");
+        const showsSubHeaderVenue = document.createElement("p");
+        const showsSubHeaderLoc = document.createElement("p");
+        const showsSpecDate = document.createElement("p");
 
-      // add classLists to elements
-      showsShow.classList.add("shows__show");
-      showsShow.classList.add("shows__show--hover");
-      showsShowDate.classList.add("shows__show-date");
-      showsSubHeaderDate.classList.add("shows__sub-header-date");
-      showsSubHeaderVenue.classList.add("shows__sub-header-venue");
-      showsSubHeaderLoc.classList.add("shows__sub-header-location");
-      showsSpecDate.classList.add("shows__spec-date");
-      showsShowVenue.classList.add("shows__show-venue");
-      showInfoCity.classList.add("shows__show-info-city");
-      showInfoVenue.classList.add("shows__show-info-venue");
-      showsShowLocation.classList.add("shows__show-location");
-      showsShowsBtn.classList.add("shows__shows-btn");
-      showsDivider.classList.add("shows__divider");
-      showsTicketBtn.classList.add("shows__ticket-btn");
+        // Button Element
+        const showsTicketBtn = document.createElement("button");
 
-      // Build HTML structure
-      showsDatesContainer.appendChild(showsShow);
-      showsShow.appendChild(showsShowDate);
-      showsShowDate.appendChild(showsSubHeaderDate);
-      showsShowDate.appendChild(showsSpecDate);
-      showsShow.appendChild(showsShowVenue);
-      showsShowVenue.appendChild(showsSubHeaderVenue);
-      showsShowVenue.appendChild(showInfoVenue);
-      showsShow.appendChild(showsShowLocation);
-      showsShowLocation.appendChild(showsSubHeaderLoc);
-      showsShowLocation.appendChild(showInfoCity);
-      showsShow.appendChild(showsShowsBtn);
-      showsShowsBtn.appendChild(showsTicketBtn);
-      showsShow.insertAdjacentElement("afterend", showsDivider);
+        let date = new Date(el.date);
+        console.log(date);
 
-      // Assign array values to elements, text to subtitles
-      if (i < 1) {
-        showsShow.classList.add("shows__show--row-width");
-        showsTicketBtn.classList.add("shows__ticket-btn--first");
-      }
-      // Remove titles from index 1 to last, add BEM modifiers
-      if (i > 0 && i < datesArray.length) {
-        showsSubHeaderDate.classList.add("shows__hidden");
-        showsSubHeaderVenue.classList.add("shows__hidden");
-        showsSubHeaderLoc.classList.add("shows__hidden");
-        showsSpecDate.classList.add("shows__margin");
-        showInfoVenue.classList.add("shows__margin");
-        showInfoCity.classList.add("shows__margin");
-        showsTicketBtn.classList.add("shows__btn-margin");
-      }
+        // add classLists to elements
+        showsShow.classList.add("shows__show");
+        showsShow.classList.add("shows__show--hover");
+        showsShowDate.classList.add("shows__show-date");
+        showsSubHeaderDate.classList.add("shows__sub-header-date");
+        showsSubHeaderVenue.classList.add("shows__sub-header-venue");
+        showsSubHeaderLoc.classList.add("shows__sub-header-location");
+        showsSpecDate.classList.add("shows__spec-date");
+        showsShowVenue.classList.add("shows__show-venue");
+        showInfoCity.classList.add("shows__show-info-city");
+        showInfoVenue.classList.add("shows__show-info-venue");
+        showsShowLocation.classList.add("shows__show-location");
+        showsShowsBtn.classList.add("shows__shows-btn");
+        showsDivider.classList.add("shows__divider");
+        showsTicketBtn.classList.add("shows__ticket-btn");
 
-      showsSubHeaderDate.innerText = "DATE";
-      showsSubHeaderVenue.innerText = "VENUE";
-      showsSubHeaderLoc.innerText = "LOCATION";
+        // Build HTML structure
+        showsDatesContainer.appendChild(showsShow);
+        showsShow.appendChild(showsShowDate);
+        showsShowDate.appendChild(showsSubHeaderDate);
+        showsShowDate.appendChild(showsSpecDate);
+        showsShow.appendChild(showsShowVenue);
+        showsShowVenue.appendChild(showsSubHeaderVenue);
+        showsShowVenue.appendChild(showInfoVenue);
+        showsShow.appendChild(showsShowLocation);
+        showsShowLocation.appendChild(showsSubHeaderLoc);
+        showsShowLocation.appendChild(showInfoCity);
+        showsShow.appendChild(showsShowsBtn);
+        showsShowsBtn.appendChild(showsTicketBtn);
+        showsShow.insertAdjacentElement("afterend", showsDivider);
 
-      showsSpecDate.innerText = el.date;
-      showInfoVenue.innerText = el.venue;
-      showInfoCity.innerText = el.location;
-      showsTicketBtn.innerText = "BUY TICKETS";
+        // Assign array values to elements, text to subtitles
+        if (i < 1) {
+          showsShow.classList.add("shows__show--row-width");
+          showsTicketBtn.classList.add("shows__ticket-btn--first");
+        }
+        // Remove titles from index 1 to last, add BEM modifiers
+        if (i > 0 && i < datesArray.length) {
+          showsSubHeaderDate.classList.add("shows__hidden");
+          showsSubHeaderVenue.classList.add("shows__hidden");
+          showsSubHeaderLoc.classList.add("shows__hidden");
+          showsSpecDate.classList.add("shows__margin");
+          showInfoVenue.classList.add("shows__margin");
+          showInfoCity.classList.add("shows__margin");
+          showsTicketBtn.classList.add("shows__btn-margin");
+        }
+
+        showsSubHeaderDate.innerText = "DATE";
+        showsSubHeaderVenue.innerText = "VENUE";
+        showsSubHeaderLoc.innerText = "LOCATION";
+
+        showsSpecDate.innerText = date.toDateString();
+        showInfoVenue.innerText = el.place;
+        showInfoCity.innerText = el.location;
+        showsTicketBtn.innerText = "BUY TICKETS";
+      });
     });
   };
 }
