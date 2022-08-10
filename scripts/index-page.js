@@ -14,10 +14,9 @@ axios
 
     // set the empty array to the API array
     commentsArray = response.data;
-    commentsArray.sort((a, b) => b - a);
 
     // call displayComments func w/ commentsArray passed in
-    displayComment(commentsArray.reverse());
+    displayComment(commentsArray.sort((a, b) => a.timestamp - b.timestamp));
   })
   .catch((err) =>
     console.log(err, "Well this is embarrassing... Something went wrong")
@@ -69,7 +68,7 @@ let displayComment = function (array) {
 
     // assign each HTML form element respective array values, convert milisecond timestamp to readable date.
     span.innerText = el.name;
-    span1.innerHTML = date.toLocaleDateString("en-US", {
+    span1.innerText = date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
@@ -84,28 +83,27 @@ displayComment(commentsArray);
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  const newComment = {
+    name: nameField.value.trim(),
+    comment: commentsField.value.trim(),
+  };
+
+  axios.post(apiCall, newComment).then((res) => {
+    if (nameField.value.length < 1 || commentsField.value.length < 1) return;
+    else {
+      console.log(res);
+      commentsArray.unshift(res.data);
+      console.log(comments);
+      displayComment([commentsArray[0]]);
+      commentsField.value = "";
+      nameField.value = "";
+    }
+  });
+
   // Form validation, trim white space
   if (nameField.value === "") nameField.classList.add("comments__error");
   if (commentsField.value === "")
     commentsField.classList.add("comments__error");
-  else if (nameField.value.length >= 1 && commentsField.value.length >= 1) {
-    const today = new Date();
-
-    commentsArray.unshift({
-      name: nameField.value.trim(),
-      timestamp: today.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      }),
-      comment: commentsField.value.trim(),
-    });
-
-    displayComment([commentsArray[0]]);
-
-    commentsField.value = "";
-    nameField.value = "";
-  }
 });
 
 // remove red error border on form fields
