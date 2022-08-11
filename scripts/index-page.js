@@ -1,13 +1,19 @@
 "use strict";
 
 const apiCall =
-  "https://project-1-api.herokuapp.com/comments?api_key=8d9114d8-af44-486e-87c5-e7843ad6dd15";
+  "https://project-1-api.herokuapp.com/comments?api_key=c4b9c3b2-8cb7-4c46-b883-8abcad345c08";
+
+//c4b9c3b2-8cb7-4c46-b883-8abcad345c08
+
+//old
+//8d9114d8-af44-486e-87c5-e7843ad6dd15
 
 let commentsArray = [];
 
 axios
   .get(apiCall)
   .then((response) => {
+    console.log(response);
     // if response is not "ok", throw an error
     if (!response.status === 200)
       throw new Error(response.status, console.log("error retrieving data"));
@@ -82,33 +88,36 @@ displayComment(commentsArray);
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-
   const newComment = {
     name: nameField.value.trim(),
     comment: commentsField.value.trim(),
   };
 
+  if (nameField.value === "") nameField.classList.add("comments__error");
+  if (commentsField.value === "")
+    commentsField.classList.add("comments__error");
+
+  if (nameField.value === "" || commentsField.value === "") return;
+
   axios
     .post(apiCall, newComment)
     .then((res) => {
-      if (!res.status >= 200 && !res.status < 300)
+      console.log(res);
+      if (res.status < 200 || res.status > 299)
         throw new Error(res.status, console.log("Could not post!"));
-      if (nameField.value.length < 1 || commentsField.value.length < 1);
-      else {
-        console.log(res);
-        commentsArray.unshift(res.data);
-        console.log(comments);
-        displayComment([commentsArray[0]]);
-        commentsField.value = "";
-        nameField.value = "";
+
+      if (nameField.value.length > 0 || commentsField.value.length > 0) {
+        {
+          commentsArray.unshift(res.data);
+          displayComment([commentsArray[0]]);
+          commentsField.value = "";
+          nameField.value = "";
+        }
       }
     })
     .catch((err) => err);
 
   // Form validation, trim white space
-  if (nameField.value === "") nameField.classList.add("comments__error");
-  if (commentsField.value === "")
-    commentsField.classList.add("comments__error");
 });
 
 // remove red error border on form fields
