@@ -5,11 +5,7 @@
 }
 
 body {
-  font-family: "AvenirNext LT Pro";
-}
-
-main {
-  font-family: "AvenirNext LT Pro";
+  font-family: " AvenirNext LT Pro ";
 }
 
 a {
@@ -36,6 +32,9 @@ a {
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+.header {
+  font-family: "AvenirNext LT Pro";
 }
 .header__flex-container {
   display: flex;
@@ -123,6 +122,7 @@ a {
 }
 
 .hero {
+  font-family: "AvenirNext LT Pro";
   display: flex;
   align-items: center;
   background: url("../assets/Images/hero-bio.jpg") center center/cover;
@@ -174,6 +174,9 @@ a {
   }
 }
 
+.about {
+  font-family: "AvenirNext LT Pro";
+}
 .about__container {
   padding: 0 1rem 0 1rem;
 }
@@ -277,6 +280,7 @@ a {
 }
 
 .photo-gallery {
+  font-family: "AvenirNext LT Pro";
   width: 100%;
   background: #fafafa;
 }
@@ -325,6 +329,7 @@ a {
 }
 
 .comments {
+  font-family: "AvenirNext LT Pro";
   padding: 1.5rem 1rem 1rem 1rem;
 }
 .comments__header {
@@ -432,6 +437,9 @@ a {
   }
 }
 
+.comments-archieve {
+  font-family: "AvenirNext LT Pro";
+}
 .comments-archieve__hr {
   width: 100%;
   border: 1px solid #e1e1e1;
@@ -483,6 +491,7 @@ a {
 }
 
 .business-info {
+  font-family: "AvenirNext LT Pro";
   font-weight: bold;
   background: #323232;
   color: #fff;
@@ -606,6 +615,7 @@ a {
 }
 
 .copy-right {
+  font-family: "AvenirNext LT Pro";
   padding-top: 1rem;
   font-size: 0.6875rem;
   font-weight: normal;

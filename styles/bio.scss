@@ -6,6 +6,7 @@
 
 // Header styles
 .header {
+  font-family: "AvenirNext LT Pro";
   &__flex-container {
     display: flex;
     flex-direction: column;
@@ -68,6 +69,7 @@
 }
 
 .hero {
+  font-family: "AvenirNext LT Pro";
   display: flex;
   align-items: center;
   background: url("../assets/Images/hero-bio.jpg") center center/ cover;
@@ -101,6 +103,7 @@
 }
 
 .about {
+  font-family: "AvenirNext LT Pro";
   &__container {
     padding: 0 1rem 0 1rem;
   }
@@ -156,6 +159,7 @@
 }
 
 .photo-gallery {
+  font-family: "AvenirNext LT Pro";
   width: 100%;
   background: $Alabaster;
 
@@ -188,6 +192,7 @@
 
 //  Comments Section
 .comments {
+  font-family: "AvenirNext LT Pro";
   padding: 1.5rem 1rem 1rem 1rem;
 
   &__header {
@@ -295,6 +300,7 @@
 // Comments Archieve
 
 .comments-archieve {
+  font-family: "AvenirNext LT Pro";
   &__hr {
     width: 100%;
     border: 1px solid $Mercury;
@@ -355,6 +361,7 @@
 
 // Footer
 .business-info {
+  font-family: "AvenirNext LT Pro";
   font-weight: bold;
   background: $BandSite-Black;
   color: $white;
@@ -437,6 +444,7 @@
 }
 
 .copy-right {
+  font-family: "AvenirNext LT Pro";
   padding-top: 1rem;
   font-size: 0.6875rem;
   font-weight: normal;
