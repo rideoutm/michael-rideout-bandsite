@@ -13,10 +13,8 @@ let commentsArray = [];
 axios
   .get(apiCall)
   .then((response) => {
-    console.log(response);
     // if response is not "ok", throw an error
-    if (!response.status === 200)
-      throw new Error(response.status, console.log("error retrieving data"));
+    if (!response.status === 200) throw new Error(response.status);
 
     // set the empty array to the API array
     commentsArray = response.data;
@@ -24,9 +22,7 @@ axios
     // call displayComments func w/ commentsArray passed in
     displayComment(commentsArray.sort((a, b) => a.timestamp - b.timestamp));
   })
-  .catch((err) =>
-    console.log(err, "Well this is embarrassing... Something went wrong")
-  );
+  .catch((err) => err);
 
 // HTML elements
 const submitBtn = document.querySelector(".comments__submit-btn");
@@ -102,9 +98,7 @@ submitBtn.addEventListener("click", (e) => {
   axios
     .post(apiCall, newComment)
     .then((res) => {
-      console.log(res);
-      if (res.status < 200 || res.status > 299)
-        throw new Error(res.status, console.log("Could not post!"));
+      if (res.status < 200 || res.status > 299) throw new Error(res.status);
 
       if (nameField.value.length > 0 || commentsField.value.length > 0) {
         {
@@ -116,8 +110,6 @@ submitBtn.addEventListener("click", (e) => {
       }
     })
     .catch((err) => err);
-
-  // Form validation, trim white space
 });
 
 // remove red error border on form fields
