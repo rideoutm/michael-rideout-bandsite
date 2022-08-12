@@ -1,10 +1,10 @@
 // Normal
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"),
-    url("assets/Font/AvenirNextLTPro-Regular.woff) format("woff"),
-    url("assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"),
-    url("assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"),
+    url("/assets/Font/AvenirNextLTPro-Regular.woff) format("woff"),
+    url("/assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"),
+    url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,10 +13,10 @@
 // Demi / 600
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../../Font/AvenirNextLTPro-Demi.woff2") format("woff2"),
-    url("../../Font/AvenirNextLTPro-Demi.woff") format("woff"),
-    url("../../Font/AvenirNextLTPro-Demi.otf") format("opentype"),
-    url("../../Font/AvenirNextLTPro-Demi.ttf") format("truetype");
+  src: url("/assetsFont/AvenirNextLTPro-Demi.woff2") format("woff2"),
+    url("/assets/Font/AvenirNextLTPro-Demi.woff") format("woff"),
+    url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"),
+    url("/assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -25,10 +25,10 @@
 // Bold / 700
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../../Font/AvenirNextLTPro-Bold.woff2") format("woff2"),
-    url("../../Font/AvenirNextLTPro-Bold.woff") format("woff"),
-    url("../../aFont/AvenirNextLTPro-Bold.ttf") format("truetype"),
-    url("../../Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("/assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"),
+    url("/assets/Font/AvenirNextLTPro-Bold.woff") format("woff"),
+    url("/assets/aFont/AvenirNextLTPro-Bold.ttf") format("truetype"),
+    url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
