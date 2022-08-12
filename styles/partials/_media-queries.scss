@@ -3,7 +3,9 @@
 @use "./global" as *;
 
 // ****************** Tablet Media Queries
+
 @mixin tablet-header {
+  font-family: "AvenirNext LT Pro";
   &__flex-container {
     display: flex;
     flex-direction: row;
