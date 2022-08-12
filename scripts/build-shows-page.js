@@ -3,39 +3,6 @@
 const apiCall =
   "https://project-1-api.herokuapp.com/showdates?api_key=8d9114d8-af44-486e-87c5-e7843ad6dd15";
 
-const datesArray = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
-
 function displayShowTitle() {
   // Non iterating elements
   const main = document.querySelector("main");
@@ -145,7 +112,7 @@ function displayShowTitle() {
           showsTicketBtn.classList.add("shows__ticket-btn--first");
         }
         // Remove titles from index 1 to last, add BEM modifiers
-        if (i > 0 && i < datesArray.length) {
+        if (i > 0 && i < res.data.length) {
           showsSubHeaderDate.classList.add("shows__hidden");
           showsSubHeaderVenue.classList.add("shows__hidden");
           showsSubHeaderLoc.classList.add("shows__hidden");
