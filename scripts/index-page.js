@@ -3,11 +3,6 @@
 const apiCall =
   "https://project-1-api.herokuapp.com/comments?api_key=c4b9c3b2-8cb7-4c46-b883-8abcad345c08";
 
-//c4b9c3b2-8cb7-4c46-b883-8abcad345c08
-
-//old
-//8d9114d8-af44-486e-87c5-e7843ad6dd15
-
 let commentsArray = [];
 
 axios

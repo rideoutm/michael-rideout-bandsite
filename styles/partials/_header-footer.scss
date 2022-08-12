@@ -1,0 +1,166 @@
+@use "./utilities" as *;
+@use "./mixins" as *;
+@use "./shows-media-queries" as *;
+@use "./media-queries" as *;
+
+.header {
+  font-family: "AvenirNext LT Pro";
+  &__flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $BandSite-Black;
+    width: 100%;
+    font-weight: normal;
+  }
+
+  &__title-container {
+    padding-top: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__logo {
+    width: 120px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__link {
+    color: $Mercury;
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+
+    &:hover {
+      border-bottom: 4px solid $white;
+      color: $white;
+    }
+  }
+
+  &__link--active {
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 4px solid $white;
+  }
+
+  &__link-text {
+    color: $Mercury;
+
+    &--active {
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  @include tablet {
+    @include tablet-header();
+  }
+
+  @include desktop {
+    @include desktop-header();
+  }
+}
+
+// Footer
+.business-info {
+  font-family: "AvenirNext LT Pro";
+  font-weight: bold;
+  background: $BandSite-Black;
+  color: $white;
+  height: 100%;
+  padding: 1rem 0px 1rem 1rem;
+  margin: 0;
+
+  &__socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 32px;
+    font-weight: bold;
+  }
+
+  &__link {
+    box-sizing: content-box;
+    padding-top: 1rem;
+    margin-right: 1.25rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding-top: 16px;
+  }
+
+  &__name {
+    font-size: 0.875rem;
+    line-height: 22px;
+    padding-top: 1rem;
+    font-weight: 600;
+  }
+
+  &__details,
+  &__email {
+    padding-top: 1rem;
+    line-height: 18px;
+    font-size: 0.812rem;
+    font-weight: normal;
+  }
+
+  &__email-link {
+    color: $white;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  @include tablet {
+    @include tablet-business-info();
+  }
+
+  @include desktop {
+    @include desktop-business-info();
+  }
+}
+
+.logo {
+  padding: 3.75rem 0 1.5rem 0;
+  max-height: 20px;
+  max-width: 120px;
+
+  @include tablet {
+    @include tablet-logo();
+  }
+
+  @include desktop {
+    @include desktop-logo();
+  }
+}
+
+.copy-right {
+  font-family: "AvenirNext LT Pro";
+  padding-top: 1rem;
+  font-size: 0.6875rem;
+  font-weight: normal;
+
+  @include tablet {
+    @include tablet-copy-right();
+  }
+
+  @include desktop {
+    @include desktop-copy-right();
+  }
+}

@@ -14,21 +14,21 @@ a {
 
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("/assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"), url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("/assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("/assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../assets/Font/AvenirNextLTPro-Demi.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("/assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/Font/AvenirNextLTPro-Bold.ttf") format("truetype"), url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/Font/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -118,6 +118,148 @@ a {
   .header__link, .header__link--active {
     font-size: 1rem;
     padding: 2.25rem;
+  }
+}
+
+.business-info {
+  font-family: "AvenirNext LT Pro";
+  font-weight: bold;
+  background: #323232;
+  color: #fff;
+  height: 100%;
+  padding: 1rem 0px 1rem 1rem;
+  margin: 0;
+}
+.business-info__socials-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.business-info__header {
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 32px;
+  font-weight: bold;
+}
+.business-info__link {
+  box-sizing: content-box;
+  padding-top: 1rem;
+  margin-right: 1.25rem;
+  width: 30px;
+  height: 30px;
+}
+.business-info__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.business-info__name {
+  font-size: 0.875rem;
+  line-height: 22px;
+  padding-top: 1rem;
+  font-weight: 600;
+}
+.business-info__details, .business-info__email {
+  padding-top: 1rem;
+  line-height: 18px;
+  font-size: 0.812rem;
+  font-weight: normal;
+}
+.business-info__email-link {
+  color: #fff;
+}
+.business-info__email-link:hover {
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .business-info {
+    position: relative;
+    padding-left: 2.25rem;
+  }
+  .business-info__header {
+    font-size: 2.25rem;
+  }
+  .business-info__link {
+    width: 30px;
+    height: 25px;
+    margin-bottom: -35px;
+    margin-left: -3px;
+  }
+  .business-info__email-link:hover, .business-info__email:hover {
+    font-weight: normal;
+  }
+  .business-info__email:hover {
+    transform: scale(1.1, 1.1);
+  }
+  .business-info__email-link, .business-info__socials-container {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .business-info__socials {
+    padding-left: 3.12rem;
+  }
+  .business-info__contact {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 1rem;
+  }
+  .business-info__pearl {
+    padding: 0 70px;
+  }
+}
+@media (min-width: 1280px) {
+  .business-info {
+    padding: 1rem 0px 1rem 0;
+  }
+  .business-info__header {
+    padding-left: 8.75rem;
+  }
+  .business-info__socials {
+    padding-left: 3.12rem;
+  }
+  .business-info__contact {
+    padding-left: 8.75rem;
+  }
+}
+
+.logo {
+  padding: 3.75rem 0 1.5rem 0;
+  max-height: 20px;
+  max-width: 120px;
+}
+@media (min-width: 768px) {
+  .logo {
+    position: absolute;
+    top: 45px;
+    right: 3.25%;
+    padding: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .logo {
+    position: absolute;
+    top: 45px;
+    right: 10.5%;
+    padding: 0;
+  }
+}
+
+.copy-right {
+  font-family: "AvenirNext LT Pro";
+  padding-top: 1rem;
+  font-size: 0.6875rem;
+  font-weight: normal;
+}
+@media (min-width: 768px) {
+  .copy-right {
+    padding-top: 2rem;
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .copy-right {
+    padding: 2.875rem 0 1rem 8.75rem;
   }
 }
 
@@ -487,147 +629,5 @@ a {
   .comments-archieve {
     width: 39%;
     margin: 0 auto;
-  }
-}
-
-.business-info {
-  font-family: "AvenirNext LT Pro";
-  font-weight: bold;
-  background: #323232;
-  color: #fff;
-  height: 100%;
-  padding: 1rem 0px 1rem 1rem;
-  margin: 0;
-}
-.business-info__socials-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.business-info__header {
-  padding-top: 1.5rem;
-  font-size: 1.5rem;
-  line-height: 32px;
-  font-weight: bold;
-}
-.business-info__link {
-  box-sizing: content-box;
-  padding-top: 1rem;
-  margin-right: 1.25rem;
-  width: 30px;
-  height: 30px;
-}
-.business-info__contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.business-info__name {
-  font-size: 0.875rem;
-  line-height: 22px;
-  padding-top: 1rem;
-  font-weight: 600;
-}
-.business-info__details, .business-info__email {
-  padding-top: 1rem;
-  line-height: 18px;
-  font-size: 0.812rem;
-  font-weight: normal;
-}
-.business-info__email-link {
-  color: #fff;
-}
-.business-info__email-link:hover {
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .business-info {
-    position: relative;
-    padding-left: 2.25rem;
-  }
-  .business-info__header {
-    font-size: 2.25rem;
-  }
-  .business-info__link {
-    width: 30px;
-    height: 25px;
-    margin-bottom: -35px;
-    margin-left: -3px;
-  }
-  .business-info__email-link:hover, .business-info__email:hover {
-    font-weight: normal;
-  }
-  .business-info__email:hover {
-    transform: scale(1.1, 1.1);
-  }
-  .business-info__email-link, .business-info__socials-container {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  .business-info__socials {
-    padding-left: 3.12rem;
-  }
-  .business-info__contact {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    padding-top: 1rem;
-  }
-  .business-info__pearl {
-    padding: 0 70px;
-  }
-}
-@media (min-width: 1280px) {
-  .business-info {
-    padding: 1rem 0px 1rem 0;
-  }
-  .business-info__header {
-    padding-left: 8.75rem;
-  }
-  .business-info__socials {
-    padding-left: 3.12rem;
-  }
-  .business-info__contact {
-    padding-left: 8.75rem;
-  }
-}
-
-.logo {
-  padding: 3.75rem 0 1.5rem 0;
-  max-height: 20px;
-  max-width: 120px;
-}
-@media (min-width: 768px) {
-  .logo {
-    position: absolute;
-    top: 45px;
-    right: 3.25%;
-    padding: 0;
-  }
-}
-@media (min-width: 1280px) {
-  .logo {
-    position: absolute;
-    top: 45px;
-    right: 10.5%;
-    padding: 0;
-  }
-}
-
-.copy-right {
-  font-family: "AvenirNext LT Pro";
-  padding-top: 1rem;
-  font-size: 0.6875rem;
-  font-weight: normal;
-}
-@media (min-width: 768px) {
-  .copy-right {
-    padding-top: 2rem;
-    font-size: 0.875rem;
-  }
-}
-@media (min-width: 1280px) {
-  .copy-right {
-    padding: 2.875rem 0 1rem 8.75rem;
   }
 }/*# sourceMappingURL=bio.css.map */

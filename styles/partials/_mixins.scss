@@ -1,5 +1,5 @@
 @use "./utilities" as *;
-@use "./typography" as *;
+// @use "./typography" as *;
 
 @mixin tablet {
   @media (min-width: $tablet-breakpoint) {

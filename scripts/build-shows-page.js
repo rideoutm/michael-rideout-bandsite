@@ -49,8 +49,6 @@ function displayShowTitle() {
   // Build HTML card, loop through dates array, assign array values to elements
   return function displayShowCard() {
     axios.get(apiCall).then((res) => {
-      console.log(res);
-
       res.data.forEach((el, i) => {
         // Div elements
         const showsShow = document.createElement("div");
@@ -73,7 +71,6 @@ function displayShowTitle() {
         const showsTicketBtn = document.createElement("button");
 
         let date = new Date(el.date);
-        console.log(date);
 
         // add classLists to elements
         showsShow.classList.add("shows__show");

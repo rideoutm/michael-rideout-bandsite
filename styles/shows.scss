@@ -1,13 +1,13 @@
-@use "./bio.scss" as *;
-@use "./partials/typography" as *;
 @use "./partials/global" as *;
+@use "./partials/typography" as *;
 @use "./partials/utilities" as *;
 @use "./partials/mixins" as *;
 @use "./partials/media-queries" as *;
 @use "./partials/shows-media-queries" as *;
+@use "./partials/header-footer" as *;
 
-// HERO SECTION
 .hero {
+  font-family: "AvenirNext LT Pro";
   background: url("../assets/Images/hero-shows.jpg") center center/cover;
   height: 325px;
   position: relative;
@@ -59,6 +59,7 @@
 
 // SHOWS SECTION
 .shows {
+  font-family: "AvenirNext LT Pro";
   width: 100%;
 
   &__title {
@@ -152,6 +153,7 @@
 
 // FOOTER
 .business-info {
+  font-family: "AvenirNext LT Pro";
   &--margin-top {
     margin-top: 3rem;
   }
