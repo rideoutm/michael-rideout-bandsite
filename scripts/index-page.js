@@ -77,6 +77,7 @@ let displayComment = function (array) {
 // run it
 displayComment(commentsArray);
 
+// Submit Btn goes *clickClickClick*
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const newComment = {
@@ -84,10 +85,12 @@ submitBtn.addEventListener("click", (e) => {
     comment: commentsField.value.trim(),
   };
 
+  // If empty name/comments, add error borders.
   if (nameField.value === "") nameField.classList.add("comments__error");
   if (commentsField.value === "")
     commentsField.classList.add("comments__error");
 
+  // if name/comments fields have empty string, don't do an axios call. No! Don't do it! Noooooooooooooooo!
   if (nameField.value === "" || commentsField.value === "") return;
 
   axios
